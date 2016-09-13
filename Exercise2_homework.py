@@ -2,6 +2,7 @@
 
 import os
 import warnings
+import re
 
 def concat_strings(a,b, **kwargs):
     """concatenate strings"""
@@ -73,4 +74,42 @@ def write_mapped_file(in_file, out_file, block_size=1000, gc_thresh=0.4):
         for i in range(len(mapped_seq)//60):
             f.write(mapped_seq[i*60:60+i*60] + '\n')
         f.write(mapped_seq[i*60:60+i*60])
-    
+
+#Ex 2.4 #Impcomplete
+def ss_finder(seq):
+    """builds lists for start and stop codons"""
+    #Temp script
+    start_codons = [m.start() for m in re.finditer('ATG', seq.upper)]
+    if len(start_codons) = 0
+        print('there is no start codon')
+        return 0, 0
+    end_codons = [m.start() for m in re.finditer('TGA', seq.upper)]
+    end_codons.extend([m.start() for m in re.finditer('TAG', seq.upper)])
+    end_codons.extend([m.start() for m in re.finditer('TAA', seq.upper)])
+    if len(end_codons) = 0:
+        print('there is no stop codon')
+        return 0, 0
+    return start_codons.sort(), end_codons.sort()
+
+def longest_orf(seq):
+    """identify the longest ORF in a sequence"""
+    starts, stops = ss_finder(seq)
+    if starts = 0 or stops = 0:
+        return
+
+    if (end_codons[-1] - start_codons[0]) % 3 == 0
+        return seq[start_codons[0]:end_codons[-1]+3]
+
+    if len(seq[start_codons[0+j]:end_codons[-1-i]+3]) % 3 == 0
+        return seq[start_codons[0+j]:end_codons[-1-i]+3]
+        elif
+
+        i = 0
+        j = 0
+        while length % 3 != 0:
+
+        return seq[start_codons.sort()[0]:end_codons.sort()[-1]+3]
+    elif len(start_codons) = 0:
+        print('there is no start codon')
+    else:
+        print('there is no stop codon')
