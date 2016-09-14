@@ -19,7 +19,7 @@ r = np.empty_like(t)
 f = np.empty_like(t)
 
 
-# Set the initial number of bacteria
+# Set the initial number of animals
 r[0] = 10
 f[0] = 1
 
