@@ -37,6 +37,3 @@ plt.xlim(8e-4, 15)
 plt.xscale('log')
 
 #plt.show()
-
-#e3
-plt.close()
