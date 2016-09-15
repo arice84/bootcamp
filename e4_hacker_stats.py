@@ -24,13 +24,13 @@ for i in range(n_reps):
 
 conf_int_2012 =  np.percentile(bs_replicates_2012, [2.5, 97.5])
 
-# x_1975, y_1975 = booU.ecdf(bd_1975)
-# x_2012, y_2012 = booU.ecdf(bd_2012)
-# x_1975_bs, y_1975_bs = booU.ecdf(bs_sample)
+x_1975, y_1975 = booU.ecdf(bd_1975)
+x_2012, y_2012 = booU.ecdf(bd_2012)
+x_1975_bs, y_1975_bs = booU.ecdf(bs_sample)
 
-# plt.plot(x_1975, y_1975, marker='.', linestyle='none')
-# plt.plot(x_1975_bs, y_1975_bs, marker='.', linestyle='none')
-# plt.xlabel('beak depth (mm)')
-# plt.ylabel('ECDF')
-# plt.legend(('1975', 'bootstrap'), loc='lower right')
-# plt.show()
+plt.plot(x_1975, y_1975, marker='.', linestyle='none')
+plt.plot(x_1975_bs, y_1975_bs, marker='.', linestyle='none')
+plt.xlabel('beak depth (mm)')
+plt.ylabel('ECDF')
+plt.legend(('1975', 'bootstrap'), loc='lower right')
+plt.show()

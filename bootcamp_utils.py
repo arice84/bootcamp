@@ -7,6 +7,10 @@ def ecdf(data):
     y = np.arange(1, 1+len(x)) / len(x)
     return x, y
 
+def plot_ecdf(x, y):
+    plt.plot(x, y, marker='.', linestyle='none', markersize=10, alpha=0.5)
+    plt.ylabel('eCDF')
+
 def bootstrap(data_array, np_stat, reps):
     """
     calculate bootstrap values for for given data and statistic
